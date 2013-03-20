@@ -203,7 +203,7 @@ module Stripe
   def self.get_uname
     (@@uname ||= RUBY_PLATFORM =~ /linux|darwin/i ? `uname -a 2>/dev/null`.strip : nil)
   rescue Errno::ENOMEM => ex # couldn't create subprocess
-    nil 
+    "uname lookup died"
   end
   
 
